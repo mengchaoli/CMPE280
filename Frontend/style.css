@@ -1,0 +1,30 @@
+svg {
+    display: block;
+}
+
+.illustration{
+    margin-left: 25%;
+}
+
+.timeRange{
+    width:500px;
+    display:flex;
+    margin-left: 5%;
+    justify-content: space-around;
+
+}
+
+.illustration p{
+    display: inline;
+    margin-left: 7%;
+    font-weight: bold;
+
+}
+
+.passage{
+    width: 600px;
+    display:flex;
+    justify-content: space-around;
+    line-height: 3px;
+
+}
