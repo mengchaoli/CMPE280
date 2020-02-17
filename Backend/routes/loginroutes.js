@@ -25,7 +25,8 @@ router.post("/login", function(req, res) {
   if (user.password != req.body.password)
     return res.status(404).send("Password Wrong");
 
-  res.send(user);
+  //res.send(user)
+  res.send("Login Successfully!! :)");
 });
 
 module.exports = router;
