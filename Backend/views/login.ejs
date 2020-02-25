@@ -29,7 +29,7 @@
           <input
             type="email"
             class="form-control"
-            name="username"
+            name="email"
             placeholder="Email"
             required="required"
           />
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="signup-form" id="signUpForm" style="display: none;">
-      <form action="/examples/actions/confirmation.php" method="post">
+      <form action="http://localhost:5000/api/register" method="post">
         <h2>Sign Up</h2>
         <p>Please fill in this form to create an account!</p>
         <hr />

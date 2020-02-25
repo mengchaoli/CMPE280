@@ -12,7 +12,7 @@ router.get("/users", (req, res) => {
 router.post("/register", function(req, res) {
   const user = {
     id: users.length,
-    username: req.body.username,
+    email: req.body.email,
     password: req.body.password
   };
   users.push(user);
@@ -20,8 +20,8 @@ router.post("/register", function(req, res) {
 });
 //router.post('/login', login.login)
 router.post("/login", function(req, res) {
-  const user = users.find(c => c.username === req.body.username);
-  if (!user) return res.status(404).send("Username Wrong");
+  const user = users.find(c => c.email === req.body.email);
+  if (!user) return res.status(404).send("Email Wrong");
   if (user.password != req.body.password)
     return res.status(404).send("Password Wrong");
 
