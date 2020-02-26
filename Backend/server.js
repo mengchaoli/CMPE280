@@ -8,7 +8,14 @@ const loginroutes = require("./routes/loginroutes");
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.use("/api", loginroutes);
 app.use(express.static(__dirname + "/public"));
 app.use(
@@ -20,14 +27,14 @@ app.use(
   })
 );
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.render("login");
 });
-app.get("/overview", function(req, res) {
+app.get("/overview", function (req, res) {
   res.render("infectionOverview");
 });
-app.get("/home", function(req, res) {
-  res.render("home");
+app.get("/animation", function (req, res) {
+  res.render("animation");
 });
 
 const port = process.env.PORT || 5000;
