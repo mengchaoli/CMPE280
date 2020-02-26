@@ -23,12 +23,12 @@ body {
     border-radius: 3px;
 }
 
-.login-form {
+.signup-form {
     width: 390px;
     margin: 150px auto;
 }
 
-.login-form form {
+.signup-form form {
     color: #999;
     border-radius: 3px;
     margin-bottom: 15px;
@@ -37,38 +37,38 @@ body {
     padding: 30px;
 }
 
-.login-form h2 {
+.signup-form h2 {
     color: #333;
     font-weight: bold;
     margin-top: 0;
     text-align: center;
 }
 
-.login-form p {
+.signup-form p {
     text-align: center;
 }
 
-.login-form hr {
+.signup-form hr {
     margin: 0 -30px 20px;
 }
 
-.login-form .form-group {
+.signup-form .form-group {
     margin-bottom: 20px;
 }
 
-.login-form input[type="checkbox"] {
+.signup-form input[type="checkbox"] {
     margin-top: 3px;
 }
 
-.login-form .row div:first-child {
+.signup-form .row div:first-child {
     padding-right: 10px;
 }
 
-.login-form .row div:last-child {
+.signup-form .row div:last-child {
     padding-left: 10px;
 }
 
-.login-form .btn {
+.signup-form .btn {
     font-size: 16px;
     font-weight: bold;
     background: #3598dc;
@@ -76,31 +76,31 @@ body {
     width: 100%;
 }
 
-.login-form .btn:hover,
-.login-form .btn:focus {
+.signup-form .btn:hover,
+.signup-form .btn:focus {
     background: #2389cd !important;
     outline: none;
 }
 
-.login-form a {
+.signup-form a {
     color: #fff;
     text-decoration: underline;
 }
 
-.login-form a:hover {
+.signup-form a:hover {
     text-decoration: none;
 }
 
-.login-form form a {
+.signup-form form a {
     color: #3598dc;
     text-decoration: none;
 }
 
-.login-form form a:hover {
+.signup-form form a:hover {
     text-decoration: underline;
 }
 
-.login-form .hint-text {
+.signup-form .hint-text {
     padding-bottom: 15px;
     text-align: center;
 }
