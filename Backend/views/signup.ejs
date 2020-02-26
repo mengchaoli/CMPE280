@@ -8,15 +8,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
-  <link rel="stylesheet" href="/login.css" class="css" />
+  <link rel="stylesheet" href="/signup.css" class="css" />
   <title>Login</title>
 </head>
 
 <body>
-  <div class="login-form" id="logInForm">
-    <form action="http://localhost:5000/api/login" method="post">
-      <h2>Log In</h2>
+  <div class="signup-form" id="signUpForm">
+    <form action="http://localhost:5000/api/register" method="post">
+      <h2>Sign Up</h2>
+      <p>Please fill in this form to create an account!</p>
       <hr />
+      <div class="form-group">
+        <div class="row">
+          <div class="col-xs-6">
+            <input type="text" class="form-control" name="first_name" placeholder="First Name" required="required" />
+          </div>
+          <div class="col-xs-6">
+            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required" />
+          </div>
+        </div>
+      </div>
       <div class="form-group">
         <input type="email" class="form-control" name="email" placeholder="Email" required="required" />
       </div>
@@ -24,25 +35,21 @@
         <input type="password" class="form-control" name="password" placeholder="Password" required="required" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+          required="required" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
       </div>
     </form>
     <div class="hint-text">
-      Don't have an account? <a id="doSignIn" href="http://localhost:5000/signup">Sign up here!</a>
-    </div>
-    <div class="hint-text">
-      See the overview of infection
-      <h2><a id="overview" href="overview">Infection Overview</a></h2>
-    </div>
-    <div class="hint-text">
-      See Our Stay Strong Slogan
-      <h2><a id="staystrong" href="animation">Our Slogan</a></h2>
+      Already have an account? <a id="doSignUp" href="http://localhost:5000/">Login here</a>
     </div>
   </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="./login.js"></script>
+  <script src="./signup.js"></script>
 </body>
 
 </html>
