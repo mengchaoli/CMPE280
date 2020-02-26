@@ -1,10 +1,8 @@
 body {
   color: #fff;
   background: #add2eb;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100%;
-  /* background: url("../assets/bg.jpg") no-repeat center fixed; */
-  /* background-size: cover; */
 }
 
 .form-control {
@@ -23,12 +21,12 @@ body {
   border-radius: 3px;
 }
 
-.signup-form {
+.login-form {
   width: 390px;
   margin: 150px auto;
 }
 
-.signup-form form {
+.login-form form {
   color: #999;
   border-radius: 3px;
   margin-bottom: 15px;
@@ -37,38 +35,38 @@ body {
   padding: 30px;
 }
 
-.signup-form h2 {
+.login-form h2 {
   color: #333;
   font-weight: bold;
   margin-top: 0;
   text-align: center;
 }
 
-.signup-form p {
+.login-form p {
   text-align: center;
 }
 
-.signup-form hr {
+.login-form hr {
   margin: 0 -30px 20px;
 }
 
-.signup-form .form-group {
+.login-form .form-group {
   margin-bottom: 20px;
 }
 
-.signup-form input[type="checkbox"] {
+.login-form input[type="checkbox"] {
   margin-top: 3px;
 }
 
-.signup-form .row div:first-child {
+.login-form .row div:first-child {
   padding-right: 10px;
 }
 
-.signup-form .row div:last-child {
+.login-form .row div:last-child {
   padding-left: 10px;
 }
 
-.signup-form .btn {
+.login-form .btn {
   font-size: 16px;
   font-weight: bold;
   background: #3598dc;
@@ -76,31 +74,31 @@ body {
   width: 100%;
 }
 
-.signup-form .btn:hover,
-.signup-form .btn:focus {
+.login-form .btn:hover,
+.login-form .btn:focus {
   background: #2389cd !important;
   outline: none;
 }
 
-.signup-form a {
+.login-form a {
   color: #fff;
   text-decoration: underline;
 }
 
-.signup-form a:hover {
+.login-form a:hover {
   text-decoration: none;
 }
 
-.signup-form form a {
+.login-form form a {
   color: #3598dc;
   text-decoration: none;
 }
 
-.signup-form form a:hover {
+.login-form form a:hover {
   text-decoration: underline;
 }
 
-.signup-form .hint-text {
+.login-form .hint-text {
   padding-bottom: 15px;
   text-align: center;
 }
