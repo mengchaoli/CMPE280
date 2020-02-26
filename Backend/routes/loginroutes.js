@@ -25,8 +25,19 @@ router.post("/login", function(req, res) {
   if (user.password != req.body.password)
     return res.status(404).send("Password Wrong");
 
-  //res.send(user)
-  res.send("Login Successfully!! :)");
+  res.render("home");
 });
+
+// //session judge whether the user is already login
+// router.get("/login", function(req, res, next) {
+//   var user = {
+//     email: "test@test.com",
+//     password: "12345"
+//   };
+//   req.session.user = user;
+//   res.render("infectionOverview", {
+//     title: "the test for nodejs session"
+//   });
+// });
 
 module.exports = router;
