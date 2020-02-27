@@ -15,10 +15,23 @@ router.post("/register", function(req, res) {
   const user = {
     id: users.length,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name
   };
+  //unique email
+  const existUser = users.find(c => c.email === user.email);
+  if (existUser) {
+    return res.status(404).send("Email has already exists!");
+  }
+  //two passwords are not same
+  if (user.password != req.body.confirm_password) {
+    return res
+      .status(404)
+      .send("Password and confirm password are not the same!");
+  }
   users.push(user);
-  res.send(user);
+  res.render("home");
 });
 
 router.use(
