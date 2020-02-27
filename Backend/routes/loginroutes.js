@@ -11,7 +11,7 @@ router.get("/users", (req, res) => {
   res.send(users);
 });
 //router.post('/register', login.register);
-router.post("/register", function(req, res) {
+router.post("/signup", function(req, res) {
   const user = {
     id: users.length,
     email: req.body.email,
@@ -57,6 +57,10 @@ router.post("/login", function(req, res) {
 
 router.get("/login", function(req, res) {
   res.render("login");
+});
+
+router.get("/signup", function(req, res) {
+  res.render("signup");
 });
 
 router.get("/home", function(req, res) {
