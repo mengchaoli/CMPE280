@@ -10,7 +10,7 @@ const bodyparser = require("body-parser");
 router.get("/users", (req, res) => {
   res.send(users);
 });
-//router.post('/register', login.register);
+//router.post('/signup');
 router.post("/signup", function(req, res) {
   const user = {
     id: users.length,
