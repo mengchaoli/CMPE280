@@ -19,6 +19,7 @@ router.post("/signup", function(req, res) {
     first_name: req.body.first_name,
     last_name: req.body.last_name
   };
+  //
   //unique email
   const existUser = users.find(c => c.email === user.email);
   if (existUser) {
