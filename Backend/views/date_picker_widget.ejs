@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date_picker_widget</title>
+    <link rel="stylesheet" type="text/css" href="/date_picker.css" >
+    <link rel="stylesheet" type="text/css" href="/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+<body>
+    <h1>Detailed Info for Coronavirus Infection in China</h1>
+    <form  action="/detailed_daily_info" method="post">
+        <div class="form-group">
+            <input class="form-control" type="text" id="datePicker" name="date" placeholder="date" value="<%= locals.date %>" aria-describedby="dateHelp">
+            <small id="dateHelp" class="form-text text-muted">The scope of date should between 2020-1-13 to 2020-2-26.</small>
+        </div>
+        
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+        </div>
+    </form>
+  
+
+        <form>
+            <div class="form-group">
+              <label >Confirmed</label>
+              <input type="text" class="form-control" id="Confirmed" value= <%= locals.confirmed %> >
+              
+            </div>
+            <div class="form-group">
+              <label>Suspect</label>
+              <input type="text" class="form-control" id="Suspect" value= <%= locals.suspect %>>
+            </div>
+            <div class="form-group">
+                <label>Dead</label>
+                <input type="text" class="form-control" id="Dead" value= <%= locals.dead %>>
+              </div>
+              <div class="form-group">
+                <label>Heal</label>
+                <input type="text" class="form-control" id="Heal" value= <%= locals.heal %>>
+              </div>
+            
+          </form>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>  
+    <script type="text/javascript" src="/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/date_picker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

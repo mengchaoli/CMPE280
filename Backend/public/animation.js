@@ -21,3 +21,11 @@ window.addEventListener('load', function () {
         }(), 1000 / 40);
     }, false);
 }, false);
+
+$(init);
+function init(){
+    $("#myCanvas").resizable();
+    $("#myCanvas").draggable();
+    $("#myCanvas").droppable();
+
+}
