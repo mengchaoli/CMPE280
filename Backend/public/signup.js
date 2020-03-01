@@ -23,9 +23,7 @@ form.addEventListener('submit', function(event) {
       !validateConfirmPassword()
     ) {
         event.preventDefault();
-      }else{
-        document.getElementById("button").click();
-      };
+      }
     }
   );
   
@@ -45,13 +43,13 @@ function validateLastName(){
 function validateEmail(){
     if (checkEmpty(email)) return;
     if(!containsCharacters(email,2)) return;
-
+    return true;
 }
 
 function validatePassword(){
     if(checkEmpty(password)) return;
     if (!meetPasswordLength(password,6,12)) return;
-    // if (!containsCharacters(password, 1)) return;
+    if (!containsCharacters(password, 1)) return;
     return true;
 }
 
@@ -111,12 +109,12 @@ function checkIfOnlyLetter(field){
 }
 
 function meetPasswordLength(field,minLength,maxLength){
-    if(field.length > minLength && field.length < maxLength){
+    if(field.value.length >= minLength && field.value.length <= maxLength){
         setValid(field);
         return true;
     } else if(field.value.length < minLength){
         setInvalid(field,`${field.name} must be at least ${minLength} long!`)
-    }else if(field.value.length > maxLength){
+    }else {
         setInvalid(field,`${field.name} must be at most ${maxLength} characters!`)
     }
 }
