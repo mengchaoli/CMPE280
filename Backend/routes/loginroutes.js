@@ -3,7 +3,6 @@ const users = require("../data/users");
 
 const router = express.Router();
 const session = require("express-session");
-const bodyparser = require("body-parser");
 
 //route to handle user registration
 //test to get all of the users
