@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const app = express();
 const loginroutes = require("./routes/loginroutes");
+const newsroutes = require("./routes/newsRoutes");
 const data_pickerroutes = require("./routes/data_pickerroutes");
 
 app.set("view engine", "ejs");
@@ -19,7 +20,7 @@ app.use(function(req, res, next) {
 });
 app.use("/api", loginroutes);
 app.use("/detailed_daily_info", data_pickerroutes);
-
+app.use("/api",newsroutes);
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", function(req, res) {
@@ -34,6 +35,10 @@ app.get("/animation", function(req, res) {
 //direct to the date_picker page
 app.get("/date_picker", function(req, res) {
   res.render("date_picker_widget");
+});
+
+app.get("/newspage", function(req, res) {
+  res.render("newsPage");
 });
 
 const port = process.env.PORT || 5000;
