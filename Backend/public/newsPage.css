@@ -1,0 +1,42 @@
+header{
+    font-size: 30px;
+    background-color: #add2eb;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    width: 99%;
+}
+
+#container{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+.card{
+    background-color:#e3dfdf;
+    font-size: 12px;
+    /* border: solid gray 1px; */
+    height:150px;
+    box-shadow: -9px 17px 27px -5px rgba(0,0,0,0.75);
+}
+
+.nav-tabs {
+    box-shadow: -9px 17px 27px -5px rgba(0,0,0,0.75);
+}
+
+.card-body{
+    margin: auto;
+}
+
+#newsImage{
+    width: 200px;
+    height: 150px;
+    float: right;
+}
+
+#innerContainer {
+    width: 70%;
+    display: inline-block;
+    padding: 20px;
+}
