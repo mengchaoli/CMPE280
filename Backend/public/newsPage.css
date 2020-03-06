@@ -1,0 +1,21 @@
+header{
+    font-size: 30px;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    width: 99%;
+
+
+}
+
+#container{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+.card{
+    font-size: 12px;
+    border: solid gray;
+}
