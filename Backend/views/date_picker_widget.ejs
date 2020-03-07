@@ -8,17 +8,13 @@
   <link rel="stylesheet" type="text/css" href="/jquery-ui-1.12.1/jquery-ui.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="/home.css">
+  <link rel="stylesheet" type="text/css" href="/navFooter.css">
 </head>
 
 <body>
-  <div class="navbar">
-    <ul>
-      <li><a href="/overview">Infection Overview</a></li>
-      <li><a href="/date_picker">Date Picker</a></li>
-    </ul>
-  </div>
-  <h1>Detailed Info for Coronavirus Infection in China</h1>`
+  <%- include('./components/navBar.ejs'); %>
+
+  <h1>Detailed Info for Coronavirus Infection in China</h1>
   <form action="/detailed_daily_info" method="post">
     <div class="form-group">
       <input class="form-control" type="text" id="datePicker" name="date" placeholder="date" value="<%= locals.date %>"
@@ -52,17 +48,8 @@
     </div>
 
   </form>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
-            <a href="#">WELL</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+
+  <%- include('./components/footer.ejs'); %>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

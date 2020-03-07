@@ -4,17 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <title>Coronavirus Express</title>
+  <link rel="stylesheet" type="text/css" href="/jquery-ui-1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" type="text/css" href="/home.css">
+  <link rel="stylesheet" type="text/css" href="/navFooter.css">
 </head>
 
 <body>
-  <div class="navbar">
-    <ul>
-      <li><a href="/overview">Infection Overview</a></li>
-      <li><a href="/date_picker">Date Picker</a></li>
-    </ul>
-  </div>
+
+  <%- include('./components/navBar.ejs'); %>
+
   <div class="illustration">
     <svg></svg>
     <div class="passage">
@@ -35,17 +35,9 @@
   <script src="https://d3js.org/d3.v4.js"></script>
   <script src="data.js"></script>
   <script src="/infectionOverview.js"></script>
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
-            <a href="#">WELL</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+
+  <%- include('./components/footer.ejs'); %>
+
 </body>
 
 </html>
