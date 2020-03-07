@@ -5,52 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News</title>
-  <link rel="stylesheet" href="./newsPage.css">
   <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./newsPage.css">
+  <link rel="stylesheet" href="./navFooter.css">
 
 </head>
 
+<%- include('./components/navBar.ejs'); %>
+
 <body>
   <header>
-    <h1>COVID-19 News</h1>
+    <h1 id="newsHeader">COVID-19 News</h1>
+    <div id="widgetButton">
+      <button type="button" class="btn btn-primary btn-sm" onclick="openMessage()">Open Message</button>
+      <button type="button" class="btn btn-primary btn-sm" onclick="closeMessage()">Close Message</button>
+    </div>
+    <div id="message" title="Recommendated Prevention">
+      <ul class="dialogMesg">
+        <li>Cover your cough or sneeze with a tissue, then throw the tissue in the trash.</li>
+        <li>Wash your hands often with soap and water for at least 20 seconds, especially after going to the bathroom;
+          before eating; and after blowing your nose, coughing, or sneezing.</li>
+      </ul>
+    </div>
   </header>
 
-  <div id="container">
+  <div id="tabs">
     <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" id="0" href="#">Feb.01</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="1" href="#">Feb.02</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="2" href="#">Feb.03</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="3" href="#">Feb.04</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="4" href="#">Feb.05</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="5" href="#">Feb.06</a>
-      </li>
-
     </ul>
-
-    <div class="card">
-      <div class="card-body">
-        <div id="innerContainer">
-          <h4 id="newsTitle"></h4>
-          <p id="newsBody"></p>
-        </div>
-        <img id="newsImage" src="" alt="image">
-      </div>
-    </div>
-
   </div>
+
+  <%- include('./components/footer.ejs'); %>
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="/jquery-ui-1.12.1/jquery-ui.min.js"></script>
