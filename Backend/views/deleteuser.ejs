@@ -7,11 +7,13 @@
   </head>
   <body>
     <h1>Delete User</h1>
-    <p>OK to delte <%= useremail %></p>
-    <form
-      action="http://localhost:5000/db/deleteuser/<%= useremail %>"
-      method="post"
-    >
+    <p>ATTENTION: Which user email you want to delte?</p>
+    <form action="http://localhost:5000/api/deleteuser" method="post">
+      <div class="form-group">
+        <p>
+          user email: <input class="form-control" name="email" id="email" />
+        </p>
+      </div>
       <button type="submit" id="button" class="btn btn-primary btn-lg">
         delete
       </button>

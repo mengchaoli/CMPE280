@@ -11,27 +11,30 @@ router.get("/users", (req, res) => {
 });
 //router.post('/signup');
 router.post("/signup", function(req, res) {
-  const user = {
-    id: users.length,
-    email: req.body.email,
-    password: req.body.password,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name
-  };
-  //
-  //unique email
-  const existUser = users.find(c => c.email === user.email);
-  if (existUser) {
-    return res.status(404).send("Email has already exists!");
-  }
-  //two passwords are not same
-  if (user.password != req.body.confirm_password) {
-    return res
-      .status(404)
-      .send("Password and confirm password are not the same!");
-  }
-  users.push(user);
-  res.render("home");
+  var db = req.db;
+
+  var uemail = req.body.email;
+  var upassword = req.body.password;
+  var ufname = req.body.first_name;
+  var ulname = req.body.last_name;
+
+  var collection = db.get("users");
+  collection.insert(
+    {
+      id: 100, // set this all to 100 need to change in the furture
+      email: uemail,
+      password: upassword,
+      first_name: ufname,
+      last_name: ulname
+    },
+    function(err, doc) {
+      if (err) {
+        res.send("Insert failed.");
+      } else {
+        res.render("home");
+      }
+    }
+  );
 });
 
 router.use(
@@ -45,14 +48,51 @@ router.use(
 
 //router.post('/login', login.login)
 router.post("/login", function(req, res) {
-  const user = users.find(c => c.email === req.body.email);
-  if (!user) return res.status(404).send("Email Wrong");
-  if (user.password != req.body.password)
-    return res.status(404).send("Password Wrong");
+  var uemail = req.body.email; // if id should transform string to int
+  var db = req.db;
+  var collection = db.get("users");
 
-  //session
-  req.session.email = req.body.email;
-  res.render("home");
+  collection.find({ email: uemail }, function(err, doc) {
+    if (err) {
+      res.send("Find Failed");
+    } else {
+      console.log(doc);
+      if (doc[0] === undefined) {
+        return res.status(404).send("Email Wrong");
+      }
+      if (doc[0].password != req.body.password) {
+        return res.status(404).send("Password Wrong");
+      } else {
+        //session
+        req.session.email = req.body.email;
+        res.render("home");
+      }
+    }
+  });
+});
+// post delete user
+router.post("/deleteuser", function(req, res) {
+  var uemail = req.body.email;
+  var db = req.db;
+  var collection = db.get("users");
+
+  collection.find({ email: uemail }, function(err, doc) {
+    if (err) {
+      res.send("Find Failed");
+    } else {
+      if (doc[0] === undefined) {
+        res.send("User Email does not exist!");
+      } else {
+        collection.remove({ email: uemail }, function(err, doc) {
+          if (err) {
+            res.send("Delete failed");
+          } else {
+            res.send("Successfully deleted " + uemail);
+          }
+        });
+      }
+    }
+  });
 });
 
 router.get("/login", function(req, res) {
@@ -74,6 +114,11 @@ router.get("/home", function(req, res) {
 router.get("/logout", function(req, res) {
   req.session.email = null;
   res.redirect("login");
+});
+
+// get delete user
+router.get("/deleteuser", function(req, res) {
+  res.render("deleteuser");
 });
 
 module.exports = router;
