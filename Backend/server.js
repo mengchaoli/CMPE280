@@ -6,6 +6,11 @@ const app = express();
 const loginroutes = require("./routes/loginroutes");
 const newsroutes = require("./routes/newsRoutes");
 const data_pickerroutes = require("./routes/data_pickerroutes");
+// connect to mongodb
+const mongo = require("mongodb");
+const monk = require("monk");
+var db = monk("localhost:27017/userdb");
+const dbuserroutes = require("./routes/dbuserroutes.js");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,9 +23,15 @@ app.use(function(req, res, next) {
   );
   next();
 });
+// db <--> controller
+app.use(function(req, res, next) {
+  req.db = db;
+  next();
+});
+app.use("/db", dbuserroutes);
 app.use("/api", loginroutes);
 app.use("/detailed_daily_info", data_pickerroutes);
-app.use("/api",newsroutes);
+app.use("/api", newsroutes);
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", function(req, res) {
