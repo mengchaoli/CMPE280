@@ -20,30 +20,22 @@ router.post("/", function(req, res) {
       .send("Please choose date between 20200113 and 20200226");
   }
 
-  // var data_of_specified_day = data_for_date_picker.filter(
-  //   a => a["date"] === int_date
-  // );
-  // console.log(data_of_specified_day);
-  var db = req.db;
-  var collection = db.get("datepicker");
+  var data_of_specified_day = data_for_date_picker.filter(
+    a => a["date"] === int_date
+  );
+  console.log(data_of_specified_day);
+  var confirmed = data_of_specified_day[0].number;
+  var suspect = data_of_specified_day[1].number;
+  var dead = data_of_specified_day[2].number;
+  var heal = data_of_specified_day[3].number;
 
-  collection.find({ date: int_date }, function(err, doc) {
-    if (err) {
-      res.send("ERROR: Date error");
-    } else {
-      var confirmed = doc[0].number;
-      var suspect = doc[1].number;
-      var dead = doc[2].number;
-      var heal = doc[3].number;
-      //redirect back to date_picker_widget page
-      res.render("date_picker_widget", {
-        date: date,
-        confirmed: confirmed,
-        suspect: suspect,
-        dead: dead,
-        heal: heal
-      });
-    }
+  //redirect back to date_picker_widget page
+  res.render("date_picker_widget", {
+    date: date,
+    confirmed: confirmed,
+    suspect: suspect,
+    dead: dead,
+    heal: heal
   });
 });
 
