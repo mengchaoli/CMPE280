@@ -95,6 +95,38 @@ router.post("/deleteuser", function(req, res) {
   });
 });
 
+// post reset password
+router.post("/resetpassword", function(req, res) {
+  var uemail = req.body.email;
+  var new_password = req.body.newpassword;
+  var db = req.db;
+  var collection = db.get("users");
+
+  collection.find({ email: uemail }, function(err, doc) {
+    if (err) {
+      res.send("Find Failed");
+    } else {
+      if (doc[0] === undefined) {
+        res.send("User Email does not exist!");
+      } else {
+        collection.update(
+          { email: uemail },
+          { $set: { password: new_password } },
+          function(err, doc2) {
+            if (err) {
+              res.send("Update failed");
+            } else {
+              res.send(
+                "Successfully updated your password, user email: " + uemail
+              );
+            }
+          }
+        );
+      }
+    }
+  });
+});
+
 router.get("/login", function(req, res) {
   res.render("login");
 });
@@ -119,6 +151,10 @@ router.get("/logout", function(req, res) {
 // get delete user
 router.get("/deleteuser", function(req, res) {
   res.render("deleteuser");
+});
+
+router.get("/resetpassword", function(req, res) {
+  res.render("resetpassword");
 });
 
 module.exports = router;

@@ -3,7 +3,10 @@ const router = express.Router();
 const modelMain = require("../models/modelMain");
 
 router.get("/userlist", modelMain.get_userlist);
-router.get("/userlist/:user_email", modelMain.get_showuser);
+router.get("/finduser", function(req, res) {
+  res.render("finduser");
+});
+router.post("/showuser", modelMain.get_showuser);
 // router.get("/newuser", function(req, res) {
 //   res.render("newuser");
 // });

@@ -8,7 +8,8 @@ module.exports.get_userlist = function(req, res) {
 };
 
 module.exports.get_showuser = function(req, res) {
-  var uemail = req.params.user_email; // if id should transform string to int
+  var uemail = req.body.email; // if id should transform string to int
+  console.log(uemail);
   var db = req.db;
   var collection = db.get("users");
 
@@ -19,7 +20,9 @@ module.exports.get_showuser = function(req, res) {
       console.log(doc);
       res.render("showuser", {
         title: "Show User: " + uemail,
-        mail: doc[0].email
+        mail: doc[0].email,
+        fname: doc[0].first_name,
+        lname: doc[0].last_name
       });
     }
   });
