@@ -17,13 +17,16 @@ module.exports.get_showuser = function(req, res) {
     if (err) {
       res.send("Find failed.");
     } else {
-      console.log(doc);
-      res.render("showuser", {
-        title: "Show User: " + uemail,
-        mail: doc[0].email,
-        fname: doc[0].first_name,
-        lname: doc[0].last_name
-      });
+      if (doc[0] === undefined) {
+        res.send("User Email does not exist!");
+      } else {
+        res.render("showuser", {
+          title: "Show User: " + uemail,
+          mail: doc[0].email,
+          fname: doc[0].first_name,
+          lname: doc[0].last_name
+        });
+      }
     }
   });
 };
