@@ -51,6 +51,8 @@ app.get("/date_picker", function(req, res) {
 app.get("/newspage", function(req, res) {
   res.render("newsPage");
 });
-
+app.get("/US_COVID_19_dashboard", function(req, res){
+  res.render("COVID-19-dashboard");
+});
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

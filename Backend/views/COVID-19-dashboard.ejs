@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>COVID-19 Dashboard</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="dashboard_js/skel.min.js"></script>
+<!--		the above js file have the css code for "2u,3u...."-->
+		<script src="dashboard_js/skel-panels.min.js"></script>
+		<script src="dashboard_js/init.js"></script>
+
+
+			<link rel="stylesheet" href="css/dc.css" />
+<link rel="stylesheet" href="css/stylenew.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<!-- Header -->
+			<div id="header">
+				<div class="container"> 
+					
+					<!-- Logo -->
+					<div id="logo">
+						<h1><a href="#">US COVID-19 Dashboard</a></h1>
+					</div>
+					
+					<!-- Nav -->
+
+				</div>
+			</div>
+			<!-- /Header -->
+			
+			<div id="page" style="margin-top:-61px;">
+
+				<div class="container">
+
+					<div class="row">
+						<div class="2u chart-wrapper" id="menuselect" style="background-color: #33CC99; height: 60px;">
+							<div class="chart-title">  <strong> State Selector </strong> </div>					
+						</div>
+						<div class="2u">
+				<div> <span> &nbsp</span></div>
+						</div>
+						<div class="2u chart-wrapper" id="total-cases">
+							<div class="chart-title">  <strong> Total Cases </strong> </div>
+						</div>
+						<div class="2u chart-wrapper" id="total-death">
+							<div class="chart-title">  <strong> Total Deaths </strong> </div>
+						</div>
+
+<!-- Once created the data count widget will automatically update the text content of child elements with the following classes:
+.total-count - total number of records
+.filter-count - number of records matched by the current filters -->
+					<div class="3u dc-data-count dc-chart" id="row-selection">
+						<span class="filter-count">_</span> selected out of <span class="total-count">_</span> Cases |
+						<span>
+							<a href='javascript:dc.filterAll();dc.redrawAll();'><font color="#33CC99">Reset All</font></a>
+						</span>
+					</div>
+							
+
+				</div>
+
+
+					<div class="row">
+						<div class="9u chart-wrapper"  id="date-chart">
+							<div class="chart-title bold"> <strong> Number of Confirmed </strong></div>
+
+						</div>
+						
+						<div class="3u chart-wrapper" id="death-ratio">
+							<div class="chart-title">  <strong> Death Ratio </strong> </div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="4u chart-wrapper"  id="age-chart">
+							<div class="chart-title">  <strong> Cases by Age Group </strong> </div>
+						</div>
+						<div class="4u chart-wrapper" id="gender-chart">
+							<div class="chart-title">  <strong> Cases by Gender</strong></div>
+
+						</div>
+
+												<div class="4u chart-wrapper"  id="state-ranking">
+							<div class="chart-title">  <strong> State Ranking </strong> </div>
+						</div>
+
+					</div>
+
+				</div>	
+			</div>
+
+			
+		</div>
+
+<script src='dashboard_js/crossfilter.js' type='text/javascript'></script>
+<script src='dashboard_js/d3.js' type='text/javascript'></script>
+<script src='dashboard_js/dc.js' type='text/javascript'></script>
+<script src='dashboard_js/queue.js' type='text/javascript'></script>
+<script src='dashboard_js/Dashboard.js' type='text/javascript'></script>
+	</body>
+</html>
