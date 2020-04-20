@@ -58,5 +58,8 @@ app.get("/newspage", function (req, res) {
 app.get("/US_COVID_19_dashboard", function (req, res) {
   res.render("COVID-19-dashboard");
 });
+app.get("/global_COVID_19_dashboard", function(req, res){
+  res.render("global_COVID19_dashboard");
+})
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 Final Project</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global_COVID19_dashboard/style.css">
+</head>
+<body>
+  <div id="nav">
+    <h2>Global COVID-19 Dashboard</h2>
+    <p>
+      Explore data by date. 
+      Current date: <span id="date-val"></span>
+      <input id="date" type="date" value=2020-01-22>
+    </p>
+    <p>The date scope is from 2020-1-22 to 2020-4-18</p>
+    <p>
+      Choose between different statistic standards.
+      <input type="radio" name="data-type" value="confirmed" checked>
+      <label>Confirmed</label>
+      <input type="radio" name="data-type" value="suspected">
+      <label>Suspected</label>
+      <input type="radio" name="data-type" value="death">
+      <label>Death</label>
+      <input type="radio" name="data-type" value="recovered">
+      <label>Recovered</label>
+    </p>
+    <p>Click on a country to see its daily trend.</p>
+  </div>
+  <section class="container">
+    <div class="chart-container">
+    <svg 
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg" 
+      id="map">
+    </svg>
+  </div>
+  <div class="chart-container right">
+    <svg 
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg" 
+      id="pie">
+    </svg>
+    <svg 
+      version="1.1"
+      baseProfile="full"
+      xmlns="http://www.w3.org/2000/svg" 
+      id="bar">
+    </svg>
+  </div>
+  </section>
+  <div class="tooltip"></div>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="/global_COVID19_dashboard_js/pie.js"></script>
+  <script src="/global_COVID19_dashboard_js/bar.js"></script>
+  <script src="/global_COVID19_dashboard_js/map.js"></script>
+  <script src="/global_COVID19_dashboard_js/app.js"></script>
+</body>
+</html>
