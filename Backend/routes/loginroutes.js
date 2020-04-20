@@ -10,7 +10,7 @@ router.get("/users", (req, res) => {
   res.send(users);
 });
 //router.post('/signup');
-router.post("/signup", function(req, res) {
+router.post("/signup", function (req, res) {
   var db = req.db;
 
   var uemail = req.body.email;
@@ -27,7 +27,7 @@ router.post("/signup", function(req, res) {
       first_name: ufname,
       last_name: ulname
     },
-    function(err, doc) {
+    function (err, doc) {
       if (err) {
         res.send("Insert failed.");
       } else {
@@ -47,12 +47,12 @@ router.use(
 );
 
 //router.post('/login', login.login)
-router.post("/login", function(req, res) {
+router.post("/login", function (req, res) {
   var uemail = req.body.email; // if id should transform string to int
   var db = req.db;
   var collection = db.get("users");
 
-  collection.find({ email: uemail }, function(err, doc) {
+  collection.find({ email: uemail }, function (err, doc) {
     if (err) {
       res.send("Find Failed");
     } else {
@@ -71,19 +71,19 @@ router.post("/login", function(req, res) {
   });
 });
 // post delete user
-router.post("/deleteuser", function(req, res) {
+router.post("/deleteuser", function (req, res) {
   var uemail = req.body.email;
   var db = req.db;
   var collection = db.get("users");
 
-  collection.find({ email: uemail }, function(err, doc) {
+  collection.find({ email: uemail }, function (err, doc) {
     if (err) {
       res.send("Find Failed");
     } else {
       if (doc[0] === undefined) {
         res.send("User Email does not exist!");
       } else {
-        collection.remove({ email: uemail }, function(err, doc) {
+        collection.remove({ email: uemail }, function (err, doc) {
           if (err) {
             res.send("Delete failed");
           } else {
@@ -96,13 +96,13 @@ router.post("/deleteuser", function(req, res) {
 });
 
 // post reset password
-router.post("/resetpassword", function(req, res) {
+router.post("/resetpassword", function (req, res) {
   var uemail = req.body.email;
   var new_password = req.body.newpassword;
   var db = req.db;
   var collection = db.get("users");
 
-  collection.find({ email: uemail }, function(err, doc) {
+  collection.find({ email: uemail }, function (err, doc) {
     if (err) {
       res.send("Find Failed");
     } else {
@@ -112,7 +112,7 @@ router.post("/resetpassword", function(req, res) {
         collection.update(
           { email: uemail },
           { $set: { password: new_password } },
-          function(err, doc2) {
+          function (err, doc2) {
             if (err) {
               res.send("Update failed");
             } else {
@@ -127,15 +127,15 @@ router.post("/resetpassword", function(req, res) {
   });
 });
 
-router.get("/login", function(req, res) {
+router.get("/login", function (req, res) {
   res.render("login");
 });
 
-router.get("/signup", function(req, res) {
+router.get("/signup", function (req, res) {
   res.render("signup");
 });
 
-router.get("/home", function(req, res) {
+router.get("/home", function (req, res) {
   if (req.session.email) {
     res.render("home", { email: req.session.email });
   } else {
@@ -143,17 +143,17 @@ router.get("/home", function(req, res) {
   }
 });
 
-router.get("/logout", function(req, res) {
+router.get("/logout", function (req, res) {
   req.session.email = null;
   res.redirect("login");
 });
 
 // get delete user
-router.get("/deleteuser", function(req, res) {
+router.get("/deleteuser", function (req, res) {
   res.render("deleteuser");
 });
 
-router.get("/resetpassword", function(req, res) {
+router.get("/resetpassword", function (req, res) {
   res.render("resetpassword");
 });
 

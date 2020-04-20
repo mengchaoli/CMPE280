@@ -3,7 +3,7 @@ const router = express.Router();
 const modelMain = require("../models/modelMain");
 
 router.get("/userlist", modelMain.get_userlist);
-router.get("/finduser", function(req, res) {
+router.get("/finduser", function (req, res) {
   res.render("finduser");
 });
 router.post("/showuser", modelMain.get_showuser);
