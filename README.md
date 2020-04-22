@@ -1,3 +1,10 @@
+#0422
+first sign up to insert admin info:
+admin email: admin@admin.com
+admin password: Admin123
+
+
+
 Assignment2
 login page
 infection overview page
