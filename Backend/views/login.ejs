@@ -1,83 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/login.css" class="css" />
-    <title>Login</title>
-  </head>
 
-  <body>
-    <div class="login-form" id="logInForm">
-      <form action="http://localhost:5000/api/login" method="post">
-        <h2>Log In</h2>
-        <hr />
-        <div class="form-group">
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            placeholder="Email"
-            required="required"
-          />
-        </div>
-        <div class="form-group">
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            placeholder="Password"
-            required="required"
-          />
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-lg">Log In</button>
-        </div>
-      </form>
-      <div class="hint-text">
-        Don't have an account?
-        <a id="doSignIn" href="/api/signup">Sign up here!</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+  <link rel="stylesheet" href="/login.css" class="css" />
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="login-form" id="logInForm">
+    <form action="http://localhost:5000/api/login" method="post">
+      <h2>Log In</h2>
+      <hr />
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" placeholder="Email" required="required" />
       </div>
-      <!-- <div class="hint-text">
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+      </div>
+    </form>
+    <div class="hint-text">
+      Don't have an account?
+      <a id="doSignIn" href="/api/signup">Sign up here!</a>
+    </div>
+    <!-- <div class="hint-text">
         See Our Stay Strong Slogan
         <h2><a id="staystrong" href="/animation">Our Slogan</a></h2>
       </div> -->
-      <div class="hint-text">
-        <h2><a id="userlist" href="/db/userlist">Check Userlist</a></h2>
-      </div>
-      <div class="hint-text">
-        <h2>
-          <a id="finduser" href="/db/finduser">Search User</a>
-        </h2>
-      </div>
-      <div class="hint-text">
-        <h2><a id="signup" href="/api/signup">Add User</a></h2>
-      </div>
-      <div class="hint-text">
-        <h2><a id="deleteuser" href="/api/deleteuser">Delete User</a></h2>
-      </div>
-      <div class="hint-text">
-        <h2>
-          <a id="resetpassword" href="/api/resetpassword">Reset Password</a>
-        </h2>
-      </div>
+    <div class="hint-text">
+      <h2>
+        <a id="resetpassword" href="/api/resetpassword">Reset Password</a>
+      </h2>
     </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="./login.js"></script>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="./login.js"></script>
+</body>
+
 </html>
