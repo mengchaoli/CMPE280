@@ -1,9 +1,13 @@
+<% data.forEach(function(item){ %>
 <div class="card">
   <div class="card-body">
     <div id="innerContainer">
-      <h4 id="newsTitle"><%= title %></h4>
-      <p id="newsBody"><%= body %></p>
+      <h3 id="newsTitle"><%= item.title %></h3>
+      <p id="newsBody"><%= item.body %> <a href="<%= item.link %>" class="readMore">Read more</a></p>
+
     </div>
-    <img id="newsImage" src="<%= image %>" alt="image">
+    <img id="newsImage" src="<%= item.image %>" alt="image">
   </div>
 </div>
+
+<% }) %>

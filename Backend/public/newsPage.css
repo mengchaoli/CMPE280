@@ -34,8 +34,8 @@ header{
     background-color:#e3dfdf;
     font-size: 12px;
     /* border: solid gray 1px; */
-    height:150px;
-    box-shadow: -9px 17px 27px -5px rgba(0,0,0,0.75);
+    height:fit-content;
+    box-shadow: -9px 17px 27px 0px rgba(0,0,0,0.75);
 }
 
 .nav-tabs {
@@ -47,13 +47,28 @@ header{
 }
 
 #newsImage{
-    width: 200px;
-    height: 150px;
+    width: 300px;
+    height: 100%;
     float: right;
+    padding-top: 2mm;
+    
 }
 
 #innerContainer {
     width: 70%;
     display: inline-block;
     padding: 20px;
+}
+
+.ui-widget-content a.readMore{
+    color: blue;
+    padding-left: 5mm;
+}
+
+#bottomSpace{
+    padding-bottom: 40mm;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    width: 24.78%;
 }
