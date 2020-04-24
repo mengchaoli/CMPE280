@@ -50,7 +50,8 @@ header{
     width: 300px;
     height: 100%;
     float: right;
-    padding-top: 2mm;
+    padding-top: 10mm;
+    padding-right: 10mm;
     
 }
 
@@ -70,5 +71,5 @@ header{
 }
 
 .ui-tabs .ui-tabs-nav li {
-    width: 24.78%;
+    width: 24%;
 }
