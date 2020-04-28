@@ -37,6 +37,9 @@ app.use(express.static(__dirname + "/public"));
 app.get("/", function (req, res) {
   res.render("login");
 });
+app.get("/home", function (req, res) {
+  res.render("home");
+});
 app.get("/overview", function (req, res) {
   res.render("infectionOverview");
 });
