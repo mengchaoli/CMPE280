@@ -56,23 +56,11 @@ router.post("/login", function (req, res) {
     return res.render("admin_home");
   }
 
-  collection.find({ email: uemail }, function (err, doc) {
-    if (err) {
-      res.send("Find Failed");
-    } else {
-      console.log(doc);
-      if (doc[0] === undefined) {
-        return res.status(404).send("Email Wrong");
-      }
-      if (doc[0].password != req.body.password) {
-        return res.status(404).send("Password Wrong");
-      } else {
-        //session
-        req.session.email = req.body.email;
+ 
         res.render("home");
-      }
-    }
-  });
+      
+    
+  
 });
 // post delete user
 router.post("/deleteuser", function (req, res) {
